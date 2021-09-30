@@ -66,4 +66,18 @@ function statement(invoice, plays) {
     }
     return volumeCredits;
   }
+
+  function appleSauce() {
+    for (let perf of invoice.performances) {
+      let totalAmount = 0;
+      
+      // print line for this order
+      result += `  ${playFor(perf).name}: ${usd(amountFor(perf))} (${
+        perf.audience
+      } seats)\n`;
+      totalAmount += amountFor(perf);
+    }
+
+    return totalAmount;
+  }
 }
